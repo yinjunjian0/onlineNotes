@@ -8,7 +8,7 @@ yarn install
 yarn run serve
 ```
 
-### 部署启动前端项目
+### 部署前端项目
 ```
 yarn run build
 ```
