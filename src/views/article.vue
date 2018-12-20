@@ -208,7 +208,7 @@ export default {
     },
     // markdown控件change事件
     delaySave(value) {
-      if (!this.initArticleTF) return false;
+    //   if (!this.initArticleTF) return false;
       this.article.content = value;
       this.setTips("loading", "保存中");
 

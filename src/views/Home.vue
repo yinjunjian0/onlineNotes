@@ -1,17 +1,22 @@
 <template>
   <div class="home">
-    <el-card class="box-card posA posACenter">
+    <el-card
+      class="box-card posA posACenter"
+      v-on:keyup.enter="login"
+    >
       <h4 class="mt20">多人在线markdown文章系统</h4>
       <el-input
         class="mt40"
         placeholder="输入登陆名"
         v-model="loginFrom.loginName"
+        @keyup.enter.native="login"
       ></el-input>
       <el-input
         placeholder="输入密码"
         class="mt20"
         v-model="loginFrom.password"
         type="password"
+        @keyup.enter.native="login"
       ></el-input>
       <el-button
         class="mt20 w100"
@@ -38,17 +43,8 @@ export default {
     };
   },
   components: {},
-  created() {
-    this.initKeyPress();
-  },
+  mounted() {},
   methods: {
-    initKeyPress() {
-      window.addEventListener("keypress", e => {
-        if (e.keyCode == "13") {
-          this.login();
-        }
-      });
-    },
     login() {
       if (!this.loginFrom.loginName || !this.loginFrom.password) {
         this.$message({
